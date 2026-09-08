@@ -28,7 +28,6 @@ public class GiftCardSteps extends GiftCards {
 	}
 	@Then("Select E-Mail in Send Via option")
 	public void select_e_mail_in_send_via_option() {
-		AddWaite(5);
 		Click("email");
 	}
 	@Then("Fill Recipients and sender details while providing wrong email id")

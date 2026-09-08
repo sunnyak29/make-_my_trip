@@ -1,0 +1,22 @@
+{"inputs": [
+    {
+      "type": "promptString",
+      "id": "jiraToken",
+      "description": "Atlassian API token",
+      "password": true
+    }
+  ],
+  "servers": {
+    "selenium": {
+      "command": "npx",
+      "args": ["-y", "@angiejones/mcp-selenium@latest"]
+    },
+    "atlassian": {
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "envFile": "${workspaceFolder}/.env"
+
+
+    }
+  }
+}

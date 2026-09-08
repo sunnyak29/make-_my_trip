@@ -33,12 +33,7 @@ public class SearchCabsSteps extends SearchCabs {
 	}
 	@Then("Get the lowest charges")
 	public void get_the_lowest_charges() {
-	 System.out.println(GetString("lprice"));
-	}
-
-	@Then("Closedriver")
-	public void closedriver() {
-	   closeBrowser();
+	 org.testng.Assert.assertFalse(GetString("lprice").isBlank(), "The lowest cab charge should be displayed");
 	}
 
 }

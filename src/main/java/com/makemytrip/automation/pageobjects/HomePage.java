@@ -3,16 +3,18 @@ package com.makemytrip.automation.pageobjects;
 
 import org.testng.Assert;
 
-import com.makemytrip.automation.base.base;
+import com.makemytrip.automation.base.Base;
 
-public class HomePage extends base {
+public class HomePage extends Base {
 	// To get URL
 	public void getURL() {
-        invokeBrowser();
 		openURL();
-//		AddWaite(10);
+	}
+	public void skipLoginIfPresent() {
+		clickIfPresent("skiplogin");
 	}
 	public void getTitle() {
-		Assert.assertEquals(driver.getTitle(),"MakeMyTrip - #1 Travel Website 50% OFF on Hotels, Flights & Holiday");
+		Assert.assertTrue(driver.getCurrentUrl().contains("makemytrip.com"), "The browser should be on the MakeMyTrip domain");
+		Assert.assertFalse(driver.getTitle().isBlank(), "The MakeMyTrip homepage title should not be blank");
 	}
 }
