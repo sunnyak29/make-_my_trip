@@ -3,9 +3,9 @@ package com.makemytrip.automation.pageobjects;
 import java.util.ArrayList;
 import org.testng.Assert;
 
-import com.makemytrip.automation.base.base;
+import com.makemytrip.automation.base.Base;
 
-public class GiftCards extends base {
+public class GiftCards extends Base {
 	public void giftcards() {
 //		if (displayed("loginpg")) {
 //	}

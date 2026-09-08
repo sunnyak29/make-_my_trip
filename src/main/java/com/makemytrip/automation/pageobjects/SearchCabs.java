@@ -2,9 +2,9 @@ package com.makemytrip.automation.pageobjects;
 
 import org.testng.Assert;
 
-import com.makemytrip.automation.base.base;
+import com.makemytrip.automation.base.Base;
 
-public class SearchCabs extends base {
+public class SearchCabs extends Base {
 	
 //public void SkipLogin() {
 //	if (displayed("loginpg")) {

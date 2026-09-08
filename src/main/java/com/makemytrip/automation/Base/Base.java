@@ -19,7 +19,7 @@ import com.makemytrip.automation.utils.PropertiesRead;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class base extends PropertiesRead{
+public class Base extends PropertiesRead{
 	 public WebElement element;
 		public static WebDriver driver;
 		public static PropertiesRead prop=new PropertiesRead();
