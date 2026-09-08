@@ -6,6 +6,9 @@
 	<properties>
 		<maven.compiler.release>25</maven.compiler.release>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.version>4.35.0</selenium.version>
+		<cucumber.version>7.16.0</cucumber.version>
+		<cucumber.filter.tags>@smoke</cucumber.filter.tags>
 	</properties>
 	<build>
 		<plugins>
@@ -14,13 +17,26 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.14.0</version>
 			</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>3.2.5</version>
+					<configuration>
+						<suiteXmlFiles>
+							<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+						</suiteXmlFiles>
+						<systemPropertyVariables>
+							<cucumber.filter.tags>${cucumber.filter.tags}</cucumber.filter.tags>
+						</systemPropertyVariables>
+					</configuration>
+				</plugin>
 		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.3.0</version>
+			<version>${selenium.version}</version>
 		</dependency>
 
 		<dependency>
@@ -31,12 +47,12 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>7.16.0</version>
+			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-testng</artifactId>
-			<version>7.16.0</version>
+			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aventstack</groupId>

@@ -7,9 +7,6 @@ import com.makemytrip.automation.base.Base;
 
 public class GiftCards extends Base {
 	public void giftcards() {
-//		if (displayed("loginpg")) {
-//	}
-		AddWaite(5);
 	    Click("Giftcards");
 
 	}
@@ -22,7 +19,6 @@ public void verifytitle() {
 	 Assert.assertEquals(actual, "Gift Cards - Buy Gift Vouchers Online, Gift Vouchers | MakeMyTrip.com");
 }
 public void invaliddetails() {
-	AddWaite(2);
 	Send("recivername","Ritesh");
 	Send("recivermob","5645158500");
 	Send("reciveremail","mrritesh885.com");
@@ -32,10 +28,8 @@ public void invaliddetails() {
 }
 public void capture() {
 	takeScreenShot();
-	System.out.println("error captured");
 }
 public void validdetails() {
-	AddWaite(2);
 	Send("recivername","Ritesh");
 	Send("recivermob","5645158500");
 	Send("reciveremail","mrritesh885@hotmail.com");
@@ -44,9 +38,7 @@ public void validdetails() {
 	Send("senderemail","sunnyccd001@gmail.com");
 }
 public void verifypaymentpage() {
-	AddWaite(10);
 	String actual= GetString("pgtitle");
-//	 Assert.asserte(actual, "Hey,Yuo are viewing this booking at the best price");
 	 Assert.assertTrue(actual.contains("viewing this booking at the best price"));
 }
 }
